@@ -29,7 +29,7 @@ def main():
             text_blocks = lp.Layout([b for b in text_blocks \
                    if not any(b.is_in(b_fig) for b_fig in figure_blocks)])
 
-            # OCR with TesseractAgent
+           
             ocr_agent = lp.TesseractAgent(languages='eng')
             for block in text_blocks:
                 segment_image = (block
@@ -38,14 +38,13 @@ def main():
                 text = ocr_agent.detect(segment_image)
                 block.set(text=text, inplace=True)
 
-            # Display the detected text
+          
             st.subheader("Detected Text:")
             for block in text_blocks:
                 if block.text:
                     st.write(block.text)
                     st.write("---")
 
-            # Display the image with bounding boxes (optional)
             st.subheader("Layout Detection:")
             annotated_image = lp.draw_box(image, layout, box_width=3, show_element_id=True)
             st.image(annotated_image, use_column_width=True)
