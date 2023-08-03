@@ -1,1 +1,2 @@
 # OCR-with-layout-detection
+# The project "OCR with Layout Detection" aims to automatically extract text from images or scanned documents while preserving the layout structure, such as paragraphs, headings, tables, and figures. The combination of OCR (Optical Character Recognition) and layout detection enables efficient information extraction from documents with complex structures, making it easier to process and analyze large volumes of textual data.
